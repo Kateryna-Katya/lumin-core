@@ -1,56 +1,494 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/test/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vanilla App Template</title>
-    <script type="module" crossorigin src="/test/index.js"></script>
-    <link rel="stylesheet" crossorigin href="/test/assets/styles-X9THPhCB.css">
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI для обычных людей | Lumin-Core</title>
+  <meta name="description"
+    content="Практики применения ИИ в повседневных задачах. Технология нового поколения для каждого.">
+    <script type="module" crossorigin src="/lumin-core/index.js"></script>
+    <link rel="stylesheet" crossorigin href="/lumin-core/assets/styles-DEoyBJIm.css">
   </head>
   <body>
+  
     <header class="header">
-  <div class="container">
-    <nav class="nav">
-      <a class="nav-logo" href="./index.html" aria-label="Site logo">
-        <svg class="nav-logo-icon" width="100" height="30">
-          <use href="{=$icon-path}"></use>
-        </svg>
-      </a>
-      <ul class="nav-list">
-        <li class="nav-item">
-          <a class="nav-link {=$highlight-act}" href="./page-2.html">Page 2</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link {=$highlight-curr}" href="./page-3.html">Page 3</a>
-        </li>
-      </ul>
-    </nav>
+  <div class="header__top">
+    <div class="container header__top-container">
+      <div class="header__contact-info">
+        <a href="tel:+441632960851" class="header__contact-link">
+          <i data-lucide="phone"></i>
+          <span>+44 1632 960851</span>
+        </a>
+        <a href="mailto:assist@lumin-core.click" class="header__contact-link">
+          <i data-lucide="mail"></i>
+          <span>assist@lumin-core.click</span>
+        </a>
+      </div>
+      <div class="header__socials">
+        <a href="#" class="header__social-link" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+        <a href="#" class="header__social-link" aria-label="X (Twitter)"><i data-lucide="twitter"></i></a>
+        <a href="#" class="header__social-link" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="header__main">
+    <div class="container header__main-container">
+      <a href="#hero" class="header__logo">Lumin-Core</a>
+      <nav class="header__nav">
+        <ul class="header__menu">
+          <li class="header__item"><a href="#hero" class="header__link">Главная</a></li>
+          <li class="header__item"><a href="#features" class="header__link">Возможности</a></li>
+          <li class="header__item"><a href="#use-cases" class="header__link">Сценарии</a></li>
+          <li class="header__item"><a href="#advantages" class="header__link">Преимущества</a></li>
+          <li class="header__item"><a href="#test" class="header__link">Онлайн Тест</a></li>
+          <li class="header__item"><a href="#contact" class="header__link header__link--cta">Связаться</a></li>
+        </ul>
+      </nav>
+      <button class="header__burger" aria-label="Открыть меню"><i data-lucide="menu"></i></button>
+    </div>
   </div>
 </header>
 
-
     <main>
       <!-- Loads the specified .html file -->
-      
+          <section class="hero" id="hero">
+        <canvas id="hero-canvas"></canvas>
+        <div class="container hero__container">
+            <div class="hero__content">
+                <h1 class="hero__title">
+                    <span class="hero__subtitle">Технология нового поколения</span>
+                    AI для обычных людей: Воплотите мечты в реальность
+                </h1>
+                <p class="hero__text">
+                    Откройте новые возможности с платформой Lumin-Core. Быстрый и легкий старт
+                    для каждого, кто хочет использовать мощь ИИ в повседневных задачах, даже
+                    без опыта. Легко разобраться без опыта.
+                </p>
+                <a href="#contact" class="btn btn--primary hero__btn">
+                    Узнать детали и начать
+                </a>
+            </div>
+            <div class="hero__image">
+                <img src="img/placeholder.png" alt="Абстрактное изображение AI-интерфейса" class="hero__placeholder">
+            </div>
+        </div>
+        <div class="hero__info-bar">
+            <div class="container">
+                <p class="hero__info-text">
+                    <i data-lucide="zap"></i> Платформа уже доступна в Европе. Доступ к платформе открыт!
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="section features" id="features">
+        <div class="container">
+            <div class="features__header">
+                <h2 class="features__title">
+                    <span class="features__subtitle">Сформировать полное понимание</span>
+                    Что может Lumin-Core для вас?
+                </h2>
+                <p class="features__description">
+                    Lumin-Core — это не просто инструмент, это технология, которая меняет ваш
+                    подход к ежедневным задачам. Подключение занимает 2 минуты.
+                </p>
+            </div>
+    
+            <div class="features__grid">
+                <div class="features__card">
+                    <div class="features__icon-wrapper">
+                        <i data-lucide="brain-circuit"></i>
+                    </div>
+                    <h3 class="features__card-title">Автоматизация рутины</h3>
+                    <p class="features__card-text">
+                        Делегируйте ИИ монотонные задачи, от планирования до сортировки информации,
+                        освобождая время для творчества и отдыха.
+                    </p>
+                </div>
+    
+                <div class="features__card">
+                    <div class="features__icon-wrapper">
+                        <i data-lucide="line-chart"></i>
+                    </div>
+                    <h3 class="features__card-title">Инструмент для пассивного дохода</h3>
+                    <p class="features__card-text">
+                        Используйте аналитические способности ИИ для управления личными финансами
+                        и поиска возможностей для роста, выступая как программа пассивного дохода.
+                    </p>
+                </div>
+    
+                <div class="features__card">
+                    <div class="features__icon-wrapper">
+                        <i data-lucide="speech-to-text"></i>
+                    </div>
+                    <h3 class="features__card-title">Быстрое создание контента</h3>
+                    <p class="features__card-text">
+                        Генерируйте профессиональные тексты, письма и резюме за считанные секунды.
+                        Качество гарантировано, легко разобраться без опыта.
+                    </p>
+                </div>
+    
+                <div class="features__card">
+                    <div class="features__icon-wrapper">
+                        <i data-lucide="puzzle"></i>
+                    </div>
+                    <h3 class="features__card-title">Персональное обучение</h3>
+                    <p class="features__card-text">
+                        ИИ адаптируется под ваш стиль обучения, предлагая только релевантные
+                        материалы и помогая расширить горизонты проекта.
+                    </p>
+                </div>
+            </div>
+    
+            <div class="features__cta">
+                <a href="#contact" class="btn btn--primary">
+                    Пройти регистрацию и начать
+                </a>
+            </div>
+        </div>
+    </section>
+    <section class="section use-cases" id="use-cases">
+        <div class="container">
+            <div class="use-cases__header features__header">
+                <h2 class="use-cases__title features__title">
+                    Практические Сценарии Использования
+                </h2>
+                <p class="use-cases__description features__description">
+                    Погрузиться в детали: узнайте, как Lumin-Core помогает решать конкретные задачи в трех основных областях
+                    вашей жизни.
+                </p>
+            </div>
+    
+            <div class="use-cases__tabs tabs">
+                <div class="tabs__nav" role="tablist">
+                    <button class="tabs__button tabs__button--active" data-tab="tab-1" role="tab">
+                        <i data-lucide="book-open"></i> Обучение и Саморазвитие
+                    </button>
+                    <button class="tabs__button" data-tab="tab-2" role="tab">
+                        <i data-lucide="wallet"></i> Управление Финансами
+                    </button>
+                    <button class="tabs__button" data-tab="tab-3" role="tab">
+                        <i data-lucide="send"></i> Рабочие Коммуникации
+                    </button>
+                </div>
+    
+                <div class="tabs__content">
+                    <div class="tabs__pane tabs__pane--active" id="tab-1" role="tabpanel">
+                        <div class="tabs__pane-inner">
+                            <img src="img/placeholder.png" alt="Сценарий: ИИ для обучения" class="tabs__image">
+                            <div class="tabs__text-content">
+                                <h3 class="tabs__pane-title">Ваш Персональный Наставник</h3>
+                                <p class="tabs__pane-text">
+                                    ИИ создает индивидуальный план обучения, анализируя ваши сильные
+                                    и слабые стороны. Он быстро суммирует сложные статьи, переводит
+                                    лекции в понятные тезисы и помогает эффективно подготовиться к
+                                    любому тесту или экзамену.
+                                </p>
+                                <ul>
+                                    <li><i data-lucide="check-circle"></i> Мгновенное резюмирование текстов.</li>
+                                    <li><i data-lucide="check-circle"></i> Создание учебных карточек.</li>
+                                    <li><i data-lucide="check-circle"></i> Персонализированная практика.</li>
+                                </ul>
+                                <a href="#contact" class="btn btn--primary btn--small">Получить больше информации</a>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="tabs__pane" id="tab-2" role="tabpanel">
+                        <div class="tabs__pane-inner">
+                            <img src="img/placeholder.png" alt="Сценарий: ИИ для финансов" class="tabs__image">
+                            <div class="tabs__text-content">
+                                <h3 class="tabs__pane-title">Проверенный партнер в управлении бюджетом</h3>
+                                <p class="tabs__pane-text">
+                                    ИИ выступает как технология для пассивного дохода, помогая
+                                    анализировать траты, прогнозировать будущие расходы и находить
+                                    наиболее выгодные финансовые продукты. Это легкий способ контроля
+                                    ваших средств.
+                                </p>
+                                <ul>
+                                    <li><i data-lucide="check-circle"></i> Оценка перспектив проекта (личного бюджета).</li>
+                                    <li><i data-lucide="check-circle"></i> Автоматический учет расходов.</li>
+                                    <li><i data-lucide="check-circle"></i> Уведомления о превышении лимитов.</li>
+                                </ul>
+                                <a href="#contact" class="btn btn--primary btn--small">Узнать детали</a>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="tabs__pane" id="tab-3" role="tabpanel">
+                        <div class="tabs__pane-inner">
+                            <img src="img/placeholder.png" alt="Сценарий: ИИ для коммуникаций" class="tabs__image">
+                            <div class="tabs__text-content">
+                                <h3 class="tabs__pane-title">Идеальные Письма и Сообщения</h3>
+                                <p class="tabs__pane-text">
+                                    Никогда больше не тратьте время на написание скучных или сложных писем.
+                                    ИИ создает профессиональные, вежливые и точные тексты для любых целей:
+                                    от деловой переписки до личных сообщений.
+                                </p>
+                                <ul>
+                                    <li><i data-lucide="check-circle"></i> Корректировка тональности текста.</li>
+                                    <li><i data-lucide="check-circle"></i> Сокращение длинных документов.</li>
+                                    <li><i data-lucide="check-circle"></i> Генерация ответов в реальном времени.</li>
+                                </ul>
+                                <a href="#contact" class="btn btn--primary btn--small">Пройти опрос</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section advantages" id="advantages">
+        <div class="container advantages__container">
+            <div class="advantages__content">
+                <h2 class="advantages__title features__title">
+                    Почему Lumin-Core — ваш лучший выбор?
+                </h2>
+                <p class="advantages__description">
+                    Мы предлагаем не просто инструмент, а **инновационную технологию**,
+                    созданную для простоты и эффективности.
+                </p>
+    
+                <ul class="advantages__list">
+                    <li class="advantages__item">
+                        <i data-lucide="shield-check"></i>
+                        <div class="advantages__text-wrapper">
+                            <h4>Проверенный партнер</h4>
+                            <p>Наша платформа — это надежный и проверенный партнер, заслуживший доверие в Европе.
+                                Предложение активно только в странах ЕС.</p>
+                        </div>
+                    </li>
+    
+                    <li class="advantages__item">
+                        <i data-lucide="zap"></i>
+                        <div class="advantages__text-wrapper">
+                            <h4>Быстрый и легкий старт</h4>
+                            <p>Подключение занимает 2 минуты. Интуитивно понятный интерфейс позволяет начать работу
+                                мгновенно, не требуя технических знаний.</p>
+                        </div>
+                    </li>
+    
+                    <li class="advantages__item">
+                        <i data-lucide="handshake"></i>
+                        <div class="advantages__text-wrapper">
+                            <h4>Бесплатная консультация</h4>
+                            <p>Получите бесплатную консультацию по всем вопросам от нашей службы поддержки. Мы поможем вам
+                                оценить перспективы проекта.</p>
+                        </div>
+                    </li>
+    
+                    <li class="advantages__item">
+                        <i data-lucide="award"></i>
+                        <div class="advantages__text-wrapper">
+                            <h4>Признание в индустрии</h4>
+                            <p>Lumin-Core уже была названа **Платформа года** в нескольких номинациях среди технологических
+                                стартапов.</p>
+                        </div>
+                    </li>
+                </ul>
+    
+                <a href="#contact" class="btn btn--primary advantages__cta">
+                    Пройти опрос и получить доступ
+                </a>
+            </div>
+    
+            <div class="advantages__image-wrapper">
+                <img src="img/placeholder.png" alt="Графическое представление преимуществ AI" class="advantages__image">
+                <p class="advantages__image-caption">
+                    <i data-lucide="activity"></i> Детали на сайте: расширьте горизонты проекта с нашими инструментами.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="section test" id="test">
+        <div class="container test__container">
+            <div class="test__content">
+                <h2 class="test__title">
+                    Готовы оценить, как ИИ изменит вашу жизнь?
+                </h2>
+                <p class="test__text">
+                    Пройдите наш короткий **Онлайн тест** (занимает меньше минуты),
+                    чтобы получить персонализированный план интеграции Lumin-Core в
+                    вашу повседневную жизнь.
+                </p>
+                <a href="#contact" class="btn btn--primary test__btn">
+                    Начать Онлайн тест
+                </a>
+            </div>
+            <div class="test__decoration">
+                <i data-lucide="check-circle-2"></i>
+            </div>
+        </div>
+    </section>
+    <section class="section awards" id="awards">
+        <div class="container awards__container">
+            <div class="awards__text-content">
+                <h2 class="awards__title features__title">
+                    Lumin-Core: Заслуженное Признание
+                </h2>
+                <p class="awards__subtitle">
+                    Платформа года! Мы гордимся тем, что являемся **проверенным партнером** для тысяч пользователей по всей
+                    Европе.
+                </p>
+                <p class="awards__description">
+                    Наша инновационная технология и приверженность принципам простоты
+                    и доступности принесли нам статус "Платформа года" в 2024 году,
+                    подтверждая, что мы предлагаем лучшее решение для интеграции ИИ в
+                    повседневную жизнь.
+                </p>
+                <a href="#contact" class="btn btn--primary awards__cta">
+                    Получить больше информации
+                </a>
+            </div>
+    
+            <div class="awards__visual">
+                <div class="awards__badge">
+                    <i data-lucide="trophy"></i>
+                    <span>ПЛАТФОРМА</span>
+                    <span>ГОДА 2024</span>
+                </div>
+                <div class="awards__quote">
+                    <i data-lucide="message-square-quote"></i>
+                    <p>"Революционный инструмент, который действительно доступен каждому."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+<section class="section contact" id="contact">
+    <div class="container contact__container">
+        <div class="contact__info">
+            <h2 class="contact__title features__title">
+                Бесплатная консультация по всем вопросам
+            </h2>
+            <p class="contact__description">
+                Оставьте свои данные, чтобы наш менеджер мог связаться с вами.
+                Мы готовы ответить на все ваши вопросы и помочь вам оценить перспективы проекта.
+                Подключение занимает 2 минуты.
+            </p>
+            <div class="contact__details">
+                <p><i data-lucide="mail"></i> assist@lumin-core.click</p>
+                <p><i data-lucide="phone"></i> +44 1632 960851</p>
+            </div>
+        </div>
+
+        <div class="contact__form-wrapper">
+            <form class="contact__form" id="contact-form">
+                <h3 class="contact__form-title">Пройти регистрацию</h3>
+
+                <div class="form-group">
+                    <label for="name" class="form-group__label">Ваше имя</label>
+                    <input type="text" id="name" name="name" class="form-group__input" required
+                        placeholder="Иван Петров">
+                </div>
+
+                <div class="form-group">
+                    <label for="email" class="form-group__label">Email</label>
+                    <input type="email" id="email" name="email" class="form-group__input" required
+                        placeholder="example@mail.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone" class="form-group__label">Номер телефона</label>
+                    <input type="tel" id="phone" name="phone" class="form-group__input" required
+                        placeholder="+44 7700 900XXX">
+                </div>
+
+                <div class="form-group form-group--captcha">
+                    <label for="captcha" class="form-group__label">
+                        Решите пример (защита от спама):
+                        <span id="captcha-question" class="captcha-question">5 + 3 = ?</span>
+                    </label>
+                    <input type="number" id="captcha" name="captcha" class="form-group__input form-group__input--small"
+                        required>
+                    <input type="hidden" id="captcha-answer" value="">
+                </div>
+
+                <div class="form-group form-group--checkbox">
+                    <input type="checkbox" id="agreement" name="agreement" required>
+                    <label for="agreement" class="form-group__label--inline">
+                        Я согласен с <a href="terms.html">условиями использования</a> и
+                        <a href="privacy.html">политикой конфиденциальности</a>.
+                    </label>
+                </div>
+
+                <button type="submit" class="btn btn--primary contact__submit-btn">
+                    Узнать детали
+                </button>
+
+                <div id="success-message" class="contact__success-message" style="display: none;">
+                    <i data-lucide="check-circle"></i>
+                    <p>Спасибо! Ваша заявка принята. Мы свяжемся с вами в ближайшее время!</p>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+
+
     </main>
 
     <footer class="footer">
-  <div class="container">
-    <p class="footer-desc">
-      Made with ✨ by
-      <a
-        class="footer-link"
-        href="https://goit.global/ua/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        GoIT team
-      </a>
-    </p>
+  <div class="container footer__container">
+    <div class="footer__col footer__col--info">
+      <a href="#hero" class="footer__logo">Lumin-Core</a>
+      <p class="footer__description">Инновационная технология для каждого. Откройте новые возможности с ИИ в
+        повседневной жизни.</p>
+
+      <ul class="footer__contact-list">
+        <li><i data-lucide="mail"></i> <a href="mailto:assist@lumin-core.click">assist@lumin-core.click</a></li>
+        <li><i data-lucide="phone"></i> <a href="tel:+441632960851">+44 1632 960851</a></li>
+        <li>
+          <i data-lucide="map-pin"></i>
+          <span>42 Great Pulteney St, Bath BA2 4DN, United Kingdom</span>
+        </li>
+      </ul>
+      <div class="footer__socials">
+        <a href="#" class="footer__social-link" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+        <a href="#" class="footer__social-link" aria-label="X (Twitter)"><i data-lucide="twitter"></i></a>
+        <a href="#" class="footer__social-link" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+      </div>
+    </div>
+
+    <div class="footer__col footer__col--nav">
+      <h3 class="footer__heading">Навигация</h3>
+      <ul class="footer__nav-list">
+        <li><a href="#hero" class="footer__nav-link">Главная</a></li>
+        <li><a href="#features" class="footer__nav-link">Возможности</a></li>
+        <li><a href="#use-cases" class="footer__nav-link">Сценарии</a></li>
+        <li><a href="#advantages" class="footer__nav-link">Преимущества</a></li>
+        <li><a href="#test" class="footer__nav-link">Онлайн Тест</a></li>
+        <li><a href="#contact" class="footer__nav-link">Связаться</a></li>
+      </ul>
+    </div>
+
+    <div class="footer__col footer__col--legal">
+      <h3 class="footer__heading">Юридическая информация</h3>
+      <ul class="footer__legal-list">
+        <li><a href="privacy.html" class="footer__legal-link">Политика конфиденциальности</a></li>
+        <li><a href="cookies.html" class="footer__legal-link">Политика использования Cookie</a></li>
+        <li><a href="terms.html" class="footer__legal-link">Условия использования</a></li>
+        <li><a href="return.html" class="footer__legal-link">Политика возврата</a></li>
+        <li><a href="disclaimer.html" class="footer__legal-link">Отказ от ответственности</a></li>
+        <li><a href="personal-data-policy.html" class="footer__legal-link">Политика обработки персональных данных</a>
+        </li>
+      </ul>
+      <p class="footer__copyright">© 2025 Lumin-Core. Все права защищены.</p>
+    </div>
   </div>
 </footer>
-
-
+    <div class="cookie-popup" id="cookie-popup">
+      <div class="cookie-popup__content">
+        <p class="cookie-popup__text">Этот сайт использует cookies для улучшения работы. Подробнее — в нашей <a
+            href="cookies.html">Cookie политике</a>.</p>
+        <button class="cookie-popup__button" id="accept-cookies">Принять</button>
+      </div>
+    </div>
+  <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+      // Инициализация иконок Lucide
+      lucide.createIcons();
+    </script>
   </body>
 </html>
