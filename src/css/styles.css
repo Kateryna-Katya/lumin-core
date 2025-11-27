@@ -1065,6 +1065,7 @@ img {
   align-items: center;
   gap: 8px;
   white-space: nowrap;
+ display: none;
 }
 
 
@@ -1084,6 +1085,9 @@ img {
   .advantages__image-wrapper {
     margin-top: 50px;
   }
+    .advantages__image-caption{
+      display: block;
+    }
 }
 /* --- 13. TEST SECTION (Секция Онлайн Тест) --- */
 .test {
@@ -1168,7 +1172,7 @@ img {
 }
 /* --- 14. AWARDS SECTION (Секция Признание) --- */
 .awards {
-  background-color: var(--color-dark);
+background: radial-gradient(circle at center, rgba(79, 70, 229, 0.2) 0%, var(--color-dark) 70%, var(--color-dark) 100%);
   padding: 100px 0;
 }
 
@@ -1475,6 +1479,7 @@ img {
     margin: 0;
     max-width: 450px;
   }
+ 
 }
 /* --- 16. POLICY PAGES STYLING (Стили для privacy.html, terms.html и т.д.) --- */
 
