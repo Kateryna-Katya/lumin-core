@@ -188,83 +188,91 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     
 });
-document.addEventListener('DOMContentLoaded', () => {
-    // ... (Existing code for Mobile Menu, Cookie Pop-up, Tabs, and Canvas Animation)
+// 5. Contact Form Logic (with Captcha Simulation)
+const form = document.getElementById('contact-form');
+const captchaQuestion = document.getElementById('captcha-question');
+const captchaAnswerInput = document.getElementById('captcha-answer');
+const successMessage = document.getElementById('success-message');
+const submitButton = form ? form.querySelector('.contact__submit-btn') : null;
 
-    // 5. Contact Form Logic (with Captcha Simulation)
-    const form = document.getElementById('contact-form');
-    const captchaQuestion = document.getElementById('captcha-question');
-    const captchaAnswerInput = document.getElementById('captcha-answer');
-    const successMessage = document.getElementById('success-message');
-    const submitButton = form ? form.querySelector('.contact__submit-btn') : null;
+if (form) {
+    // Function to generate a simple math question (Captcha)
+    function generateCaptcha() {
+        const num1 = Math.floor(Math.random() * 10) + 1;
+        const num2 = Math.floor(Math.random() * 10) + 1;
+        const operator = '+'; // Keep it simple for simulation
+        const question = `${num1} ${operator} ${num2} = ?`;
+        const answer = num1 + num2;
 
-    if (form) {
-        // Function to generate a simple math question (Captcha)
-        function generateCaptcha() {
-            const num1 = Math.floor(Math.random() * 10) + 1;
-            const num2 = Math.floor(Math.random() * 10) + 1;
-            const operator = '+'; // Keep it simple for simulation
-            const question = `${num1} ${operator} ${num2} = ?`;
-            const answer = num1 + num2;
-
-            if (captchaQuestion) {
-                captchaQuestion.textContent = question;
-            }
-            if (captchaAnswerInput) {
-                captchaAnswerInput.value = answer; // Store the correct answer
-            }
+        if (captchaQuestion) {
+            captchaQuestion.textContent = question;
         }
-
-        // Generate captcha on load
-        generateCaptcha();
-
-        // Handle form submission
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const userAnswer = parseInt(document.getElementById('captcha').value);
-            const correctAnswer = parseInt(captchaAnswerInput.value);
-            
-            // 1. Check Captcha
-            if (userAnswer !== correctAnswer) {
-                alert('Ошибка: Неверный ответ на пример. Попробуйте снова.');
-                generateCaptcha(); // Regenerate captcha on failure
-                document.getElementById('captcha').value = ''; // Clear input
-                return;
-            }
-
-            // 2. Simulate Form Submission
-            
-            // Disable button and show loading state
-            if (submitButton) {
-                submitButton.textContent = 'Отправка...';
-                submitButton.disabled = true;
-            }
-            
-            // Simulate network delay
-            setTimeout(() => {
-                // Hide the form fields
-                form.querySelectorAll('.form-group, .contact__form-title, .contact__submit-btn').forEach(el => {
-                    el.style.display = 'none';
-                });
-                
-                // Show success message
-                if (successMessage) {
-                    successMessage.style.display = 'flex'; // Use flex to match CSS
-                }
-
-                // Optional: Re-enable form fields and reset form after a short delay
-                // setTimeout(() => {
-                //     form.reset();
-                //     generateCaptcha();
-                //     form.querySelectorAll('.form-group, .contact__form-title, .contact__submit-btn').forEach(el => {
-                //         el.style.display = '';
-                //     });
-                //     successMessage.style.display = 'none';
-                // }, 5000); 
-
-            }, 1500); // 1.5 seconds delay
-        });
+        if (captchaAnswerInput) {
+            captchaAnswerInput.value = answer; // Store the correct answer
+        }
     }
 
-});
+    // Generate captcha on load
+    generateCaptcha();
+
+    // Handle form submission
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const userAnswer = parseInt(document.getElementById('captcha').value);
+        const correctAnswer = parseInt(captchaAnswerInput.value);
+        
+        // 1. Check Captcha
+        if (userAnswer !== correctAnswer) {
+            alert('Ошибка: Неверный ответ на пример. Попробуйте снова.');
+            generateCaptcha(); // Regenerate captcha on failure
+            document.getElementById('captcha').value = ''; // Clear input
+            return;
+        }
+
+        // 2. Simulate Form Submission
+        
+        // Disable button and show loading state
+        if (submitButton) {
+            submitButton.textContent = 'Отправка...';
+            submitButton.disabled = true;
+        }
+        
+        // Simulate network delay (1.5 seconds)
+        setTimeout(() => {
+            // Hide the form fields
+            form.querySelectorAll('.form-group, .contact__form-title, .contact__submit-btn').forEach(el => {
+                el.style.display = 'none';
+            });
+            
+            // Show success message
+            if (successMessage) {
+                successMessage.style.display = 'flex'; 
+            }
+
+            // 3. Reset after 5 seconds (НОВИЙ БЛОК)
+            setTimeout(() => {
+                form.reset();
+                generateCaptcha();
+                
+                // Re-enable form fields and title/button
+                form.querySelectorAll('.form-group, .contact__form-title, .contact__submit-btn').forEach(el => {
+                    // Використовуємо порожній рядок, щоб повернути стилі з CSS (блочні або флекс-елементи)
+                    el.style.display = ''; 
+                });
+                
+                if (successMessage) {
+                    successMessage.style.display = 'none';
+                }
+
+                // Reset button state
+                if (submitButton) {
+                     submitButton.textContent = 'Узнать детали';
+                     submitButton.disabled = false;
+                }
+
+            }, 3000); // 5 секунд
+        
+        }, 1500); // 1.5 секунд
+    });
+}
